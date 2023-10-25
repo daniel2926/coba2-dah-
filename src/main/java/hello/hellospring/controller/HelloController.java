@@ -13,10 +13,11 @@ public class HelloController {
         return "hello";
     }
 
-
-    @GetMapping("hello-spring")
-    @ResponseBody
-    public String helloSpring(@RequestParam("name") String name) {
-        return "hello " + name;
+    @GetMapping("hello-mvc")
+    public String helloMvc(@RequestParam("name") String name, Model model) {
+        model.addAttribute("name", name);
+        return "hello-template";
     }
+
+
 }
