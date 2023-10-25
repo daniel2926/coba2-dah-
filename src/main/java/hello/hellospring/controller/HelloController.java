@@ -13,11 +13,6 @@ public class HelloController {
         return "hello";
     }
 
-    @GetMapping("hello-mvc")
-    public String helloMvc(@RequestParam("name") String name, Model model) {
-        model.addAttribute("name", name);
-        return "hello-template";
-    }
 
     @GetMapping("hello-spring")
     @ResponseBody
